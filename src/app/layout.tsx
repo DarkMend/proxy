@@ -16,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" className={NunitoSans.className}>
-      <body>{children}</body>
+      <body>
+        {children}
+      </body>
     </html>
   )
 }

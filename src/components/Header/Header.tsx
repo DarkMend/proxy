@@ -3,6 +3,7 @@ import styles from "./Header.module.scss";
 import Button from "../ui/Buttons/Button/Button";
 import DropdownList from "../ui/DropdowList/DropdownList";
 import { list } from "./data";
+import RUIcon from "../../../public/ru.svg";
 
 export default function Header() {
   return (

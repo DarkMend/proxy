@@ -1,0 +1,10 @@
+.item {
+  padding: 10px 16px;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+
+  &:hover {
+    background: $background-color-secondary;
+  }
+}

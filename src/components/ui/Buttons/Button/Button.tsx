@@ -8,6 +8,7 @@ export default function Button({
   icon,
   children,
   buttonType = "default",
+  reverse = false,
   ...props
 }: IButton) {
   return (
@@ -17,7 +18,11 @@ export default function Button({
       })}
       {...props}
     >
-      <div className={styles.content}>
+      <div
+        className={cn(styles.content, {
+          [styles.reverse]: reverse,
+        })}
+      >
         <div
           className={cn(styles.svg, {
             [styles.active]: !!icon,

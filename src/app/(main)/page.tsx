@@ -2,8 +2,10 @@ import styles from "./main.module.scss";
 import RocketImage from "../../../public/img/block1.svg";
 import Button from "@/components/ui/Buttons/Button/Button";
 import BannerArrowIcon from "@/public/arrow-banner.svg";
-import Image from "next/image";
 import ImagePng from "@/public/switch.svg";
+import AdvantagesItem from "@/components/AdvantagesItem/AdvantagesItem";
+import { advantagesList } from "./data";
+import Title from "@/components/ui/Title/Title";
 
 export default function Page() {
   return (
@@ -35,6 +37,14 @@ export default function Page() {
             <RocketImage />
           </div>
         </div>
+      </section>
+      <section className={styles.advantages}>
+        {advantagesList.map((item) => (
+          <AdvantagesItem icon={item.icon} text={item.text} key={item.text} />
+        ))}
+      </section>
+      <section className={styles.tariff}>
+        <Title>Тарифы</Title>
       </section>
     </>
   );

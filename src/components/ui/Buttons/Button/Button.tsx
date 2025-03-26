@@ -9,11 +9,12 @@ export default function Button({
   children,
   buttonType = "default",
   reverse = false,
+  className,
   ...props
 }: IButton) {
   return (
     <button
-      className={cn(styles.button, {
+      className={cn(styles.button, className, {
         [styles.small]: buttonType == "small",
       })}
       {...props}

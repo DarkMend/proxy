@@ -23,7 +23,7 @@ export default function IconText({
         <div className={styles.title}>{title}</div>
         <p
           className={cn(styles.text, {
-            [styles.title]: !!title,
+            [styles.small]: !!title,
           })}
         >
           {text}

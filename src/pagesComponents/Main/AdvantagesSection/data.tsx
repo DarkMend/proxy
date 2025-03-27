@@ -1,7 +1,7 @@
-import RocketIcon from "@/public/rocket.svg";
-import HttpIcon from "@/public/http.svg";
-import CheckIcon from "@/public/check.svg";
-import ApiIcon from "@/public/api.svg";
+import RocketIcon from "@/src/assets/icons/rocket.svg";
+import HttpIcon from "@/src/assets/icons/http.svg";
+import CheckIcon from "@/src/assets/icons/check.svg";
+import ApiIcon from "@/src/assets/icons/api.svg";
 
 export const advantagesList = [
   {

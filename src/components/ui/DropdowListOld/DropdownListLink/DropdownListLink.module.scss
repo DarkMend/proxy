@@ -5,6 +5,6 @@
   white-space: nowrap;
 
   &:hover {
-    background: $background-color-secondary;
+    background: variables.$background-color-secondary;
   }
 }

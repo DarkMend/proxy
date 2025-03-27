@@ -13,7 +13,7 @@
     justify-content: space-between;
 
     .price {
-      color: $text-color-accent;
+      color: variables.$text-color-accent;
       font-size: 32px;
       font-weight: 700;
     }

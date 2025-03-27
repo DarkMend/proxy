@@ -1,10 +1,9 @@
 import Link from "next/link";
 import styles from "./Header.module.scss";
 import Button from "../ui/Buttons/Button/Button";
-import DropdownList from "../ui/DropdowList/DropdownList";
+import DropdownList from "../ui/DropdowListOld/DropdownList";
 import { list } from "./data";
-import RUIcon from "../../../public/ru.svg";
-
+import Dropdown from "../ui/Dropdown/Dropdown";
 export default function Header() {
   return (
     <header className={styles.header}>
@@ -17,6 +16,7 @@ export default function Header() {
             <Link href="#">FAQ</Link>
             <Link href="#">Cервисы</Link>
             <Link href="#">Разработчикам</Link>
+            <Dropdown />
             <Link href="#">RU</Link>
           </nav>
           <div className={styles.actions}>

@@ -21,7 +21,7 @@
     .bannerInfoParagraph {
       font-size: 24px;
       font-weight: 500;
-      color: $text-color-primary;
+      color: variables.$text-color-primary;
       max-width: 508px;
     }
 
@@ -30,7 +30,7 @@
       flex-direction: row;
       align-items: center;
       font-size: 60px;
-      color: $text-color-primary;
+      color: variables.$text-color-primary;
       font-weight: 800;
       gap: 20px;
 

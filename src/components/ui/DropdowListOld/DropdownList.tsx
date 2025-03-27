@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Dropdownlist.module.scss";
-import ArrowIcon from "../../../../public/arrow.svg";
+import ArrowIcon from "@/src/assets/icons/arrow.svg";
 import { ReactNode, useEffect, useRef, useState } from "react";
 import cn from "classnames";
 import DropdownListLink from "./DropdownListLink/DropdownListLink";

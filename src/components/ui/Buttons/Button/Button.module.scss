@@ -6,20 +6,20 @@
   height: 50px;
   padding: 0px 32px;
   border: none;
-  background: $button-color-primary;
+  background: variables.$button-color-primary;
   cursor: pointer;
   border-radius: 100px;
-  color: $text-color-tetrary;
+  color: variables.$text-color-tetrary;
   font-weight: 600;
   font-size: 18px;
   transition: all 0.3s ease;
 
   &:hover {
-    background: $button-color-primaryHover;
+    background: variables.$button-color-primaryHover;
   }
 
   &:active {
-    background: $button-color-primaryActive;
+    background: variables.$button-color-primaryActive;
   }
 
   &.small {

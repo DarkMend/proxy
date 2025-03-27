@@ -6,7 +6,7 @@
 
   .text {
     font-size: 20px;
-    color: $text-color-primary;
+    color: variables.$text-color-primary;
     // max-width: 140px;
 
     &.small {

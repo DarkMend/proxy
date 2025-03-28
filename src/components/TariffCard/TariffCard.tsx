@@ -1,17 +1,34 @@
 "use client";
 
+import { ReactNode } from "react";
 import IconText from "../IconText/IconText";
 import Button from "../ui/Buttons/Button/Button";
 import styles from "./TariffCard.module.scss";
-export default function TariffCard() {
+
+export interface ITariffCard {
+  data: {
+    title: {
+      icon: ReactNode;
+      title: string;
+      text: string;
+    };
+    price: number;
+  };
+}
+
+export default function TariffCard({ data }: ITariffCard) {
   return (
     <div className={styles.tariffCard}>
       <div className={styles.title}>
-        <IconText title="adasd" text="sada" icon={"ss"} />
+        <IconText
+          title={data.title.title}
+          text={data.title.text}
+          icon={data.title.icon}
+        />
       </div>
       <div className={styles.main}></div>
       <div className={styles.action}>
-        <div className={styles.price}>40 ₽</div>
+        <div className={styles.price}>{data.price} ₽</div>
         <Button buttonType="small">Купить</Button>
       </div>
     </div>

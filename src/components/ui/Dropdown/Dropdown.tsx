@@ -5,20 +5,32 @@ import { DropdownMenu } from "radix-ui";
 import styles from "./Dropdown.module.scss";
 import { useState } from "react";
 import cn from "classnames";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 
 const variants = {
   hidden: {
     opacity: 0,
-    transition: { duration: 0.3, ease: "easeOut" },
+    transform: "translateY(-10px)",
+    transition: {
+      duration: 0.2,
+      ease: "easeIn",
+    },
   },
   visible: {
     opacity: 1,
-    transition: { duration: 0.3, ease: "easeOut" },
+    transform: "translateY(0)",
+    transition: {
+      duration: 0.2,
+      ease: "easeOut",
+    },
   },
   exit: {
     opacity: 0,
-    transition: { duration: 0.15, ease: "easeIn" },
+    transform: "translateY(-10px)",
+    transition: {
+      duration: 0.2,
+      ease: "easeIn",
+    },
   },
 };
 
@@ -46,17 +58,19 @@ export default function Dropdown() {
         </DropdownMenu.Trigger>
         <AnimatePresence>
           {active && (
-            <motion.div
-              variants={variants}
-              initial="hidden"
-              animate={active ? "visible" : "hidden"}
-            >
-              <DropdownMenu.Content className={styles.content}>
+            <DropdownMenu.Content className={styles.content} asChild forceMount>
+              <motion.div
+                key="dropdown-content"
+                initial="hidden"
+                animate="visible"
+                variants={variants}
+                exit="exit"
+              >
                 <DropdownMenu.Item className={styles.item}>
                   1111s
                 </DropdownMenu.Item>
-              </DropdownMenu.Content>
-            </motion.div>
+              </motion.div>
+            </DropdownMenu.Content>
           )}
         </AnimatePresence>
       </DropdownMenu.Root>

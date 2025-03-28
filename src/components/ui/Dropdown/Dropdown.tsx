@@ -34,7 +34,17 @@ const variants = {
   },
 };
 
-export default function Dropdown() {
+export interface IDropdownList {
+  name: string;
+  href: string;
+}
+
+export interface IDropdown {
+  title: string;
+  items?: IDropdownList[];
+}
+
+export default function Dropdown({ title, items }: IDropdown) {
   const [active, setActive] = useState(false);
 
   const toggle = () => {
@@ -46,7 +56,7 @@ export default function Dropdown() {
       <DropdownMenu.Root onOpenChange={toggle} open={active}>
         <DropdownMenu.Trigger asChild>
           <button className={styles.trigger}>
-            <p>Текст</p>
+            <p>{title}</p>
             <div
               className={cn(styles.icon, {
                 [styles.active]: active,
@@ -66,9 +76,11 @@ export default function Dropdown() {
                 variants={variants}
                 exit="exit"
               >
-                <DropdownMenu.Item className={styles.item}>
-                  1111s
-                </DropdownMenu.Item>
+                {items?.map((item) => (
+                  <DropdownMenu.Item className={styles.item} key={item.name}>
+                    {item.name}
+                  </DropdownMenu.Item>
+                ))}
               </motion.div>
             </DropdownMenu.Content>
           )}

@@ -11,12 +11,12 @@ export default function Header() {
         <div className={styles.wrapper}>
           <div></div>
           <nav className={styles.nav}>
-            <DropdownList text="Виды прокси" items={list} />
+            <Dropdown title="Виды прокси" items={list} />
             <Link href="#">Тарифы</Link>
             <Link href="#">FAQ</Link>
             <Link href="#">Cервисы</Link>
             <Link href="#">Разработчикам</Link>
-            <Dropdown />
+            <Dropdown title="Виды прокси" />
             <Link href="#">RU</Link>
           </nav>
           <div className={styles.actions}>

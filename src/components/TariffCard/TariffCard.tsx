@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import IconText from "../IconText/IconText";
 import Button from "../ui/Buttons/Button/Button";
 import styles from "./TariffCard.module.scss";
+import DropdownSingle from "../ui/DropdownSingle/DropdownSingle";
 
 export interface ITariffCard {
   data: {
@@ -26,7 +27,9 @@ export default function TariffCard({ data }: ITariffCard) {
           icon={data.title.icon}
         />
       </div>
-      <div className={styles.main}></div>
+      <div className={styles.main}>
+        <DropdownSingle label="Страна" />
+      </div>
       <div className={styles.action}>
         <div className={styles.price}>{data.price} ₽</div>
         <Button buttonType="small">Купить</Button>

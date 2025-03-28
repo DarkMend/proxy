@@ -1,0 +1,58 @@
+.label {
+  font-size: 18px;
+  font-weight: 500;
+  color: variables.$text-color-primary;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 16px;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+
+  &:focus {
+    background: variables.$background-color-secondary;
+  }
+
+  &:hover {
+    background: variables.$background-color-secondary;
+  }
+}
+
+.radioItem {
+  width: 16px;
+  height: 16px;
+  border-radius: 100px;
+  background: white;
+  border: 1px solid #f28774;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.indicator {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: #f28774;
+  border-radius: 100px;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content {
+  padding: 10px;
+  border-radius: 24px;
+  box-shadow: 0px 10px 30px 0px #0000000f;
+  font-size: 14px;
+}

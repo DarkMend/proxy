@@ -5,6 +5,7 @@ import AdvantagesSection from "@/src/pagesComponents/Main/AdvantagesSection/Adva
 import TariffSection from "@/src/pagesComponents/Main/TariffSection/TariffSection";
 import StepSection from "@/src/pagesComponents/Main/StepsSection/StepsSection";
 import ScopeSection from "@/src/pagesComponents/Main/ScopeSection/ScopeSection";
+import PaymentsMethodsSection from "@/src/pagesComponents/Main/PaymentMethodsSection/PaymentsMethodsSection";
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
       <TariffSection />
       <StepSection />
       <ScopeSection />
+      <PaymentsMethodsSection />
     </>
   );
 }

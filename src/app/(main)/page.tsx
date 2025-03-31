@@ -4,6 +4,7 @@ import BannerSection from "@/src/pagesComponents/Main/BannerSection/BannerSectio
 import AdvantagesSection from "@/src/pagesComponents/Main/AdvantagesSection/AdvantagesSection";
 import TariffSection from "@/src/pagesComponents/Main/TariffSection/TariffSection";
 import StepSection from "@/src/pagesComponents/Main/StepsSection/StepsSection";
+import ScopeSection from "@/src/pagesComponents/Main/ScopeSection/ScopeSection";
 
 export default function Page() {
   return (
@@ -12,6 +13,7 @@ export default function Page() {
       <AdvantagesSection />
       <TariffSection />
       <StepSection />
+      <ScopeSection />
     </>
   );
 }

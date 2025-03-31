@@ -1,7 +1,8 @@
 import { DropdownMenu, RadioGroup } from "radix-ui";
 import styles from "./DropdownSingle.module.scss";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import SelectIcon from "@/src/assets/icons/arrow.svg";
 
 export interface IDropdownSingle {
   label?: string;
@@ -40,6 +41,14 @@ export default function DropdownSingle({ label }: IDropdownSingle) {
     text: null,
   });
   const [active, setActive] = useState(false);
+  const triggerRef = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState("auto");
+
+  useEffect(() => {
+    if (triggerRef.current) {
+      setWidth(`${triggerRef.current.offsetWidth}px`);
+    }
+  }, [active]);
 
   return (
     <>
@@ -48,18 +57,22 @@ export default function DropdownSingle({ label }: IDropdownSingle) {
         open={active}
       >
         <DropdownMenu.Trigger asChild>
-          <label>
-            <p className={styles.label}>{label}</p>
-            <select>
-              <option value={option?.value} defaultChecked>
-                {option.text}
-              </option>
-            </select>
-          </label>
+          <div className={styles.triggerWrapper}>
+            {label && <p className={styles.triggerName}>{label}</p>}
+            <div className={styles.trigger} ref={triggerRef}>
+              <p className={styles.label}>{label}</p>
+              <SelectIcon />
+            </div>
+          </div>
         </DropdownMenu.Trigger>
         <AnimatePresence>
           {active && (
-            <DropdownMenu.Content asChild forceMount className={styles.content}>
+            <DropdownMenu.Content
+              asChild
+              forceMount
+              className={styles.content}
+              style={{ width: width }}
+            >
               <motion.div
                 variants={variants}
                 exit="exit"
@@ -68,7 +81,7 @@ export default function DropdownSingle({ label }: IDropdownSingle) {
                 key="radio-dropdown"
               >
                 <RadioGroup.Root className={styles.root}>
-                  <div className={styles.wrapper}>
+                  <label className={styles.wrapper} htmlFor="r1">
                     <RadioGroup.Item
                       value="1"
                       id="r1"
@@ -76,10 +89,8 @@ export default function DropdownSingle({ label }: IDropdownSingle) {
                     >
                       <RadioGroup.Indicator className={styles.indicator} />
                     </RadioGroup.Item>
-                    <label htmlFor="r1" className={styles.label}>
-                      Россия
-                    </label>
-                  </div>
+                    <p className={styles.label}>Россия</p>
+                  </label>
                 </RadioGroup.Root>
               </motion.div>
             </DropdownMenu.Content>

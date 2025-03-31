@@ -2,9 +2,34 @@
   font-size: 18px;
   font-weight: 500;
   color: variables.$text-color-primary;
+  cursor: pointer;
+  // width: 100%;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid variables.$stroke-color-black;
+  padding: 14px 20px;
+  border-radius: 100px;
+}
+
+.triggerWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .triggerName {
+    font-size: 18px;
+    font-weight: 500;
+  }
 }
 
 .wrapper {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -26,22 +51,31 @@
 }
 
 .radioItem {
+  all: unset;
+  background-color: white;
   width: 16px;
   height: 16px;
-  border-radius: 100px;
-  background: white;
+  border-radius: 100%;
   border: 1px solid #f28774;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .indicator {
-  display: block;
-  width: 12px;
-  height: 12px;
-  background: #f28774;
-  border-radius: 100px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  &::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: #f28774;
+  }
 }
 
 .root {
@@ -53,6 +87,8 @@
 .content {
   padding: 10px;
   border-radius: 24px;
+  background: white;
   box-shadow: 0px 10px 30px 0px #0000000f;
   font-size: 14px;
+  width: 100%;
 }

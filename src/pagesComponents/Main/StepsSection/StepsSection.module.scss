@@ -1,0 +1,48 @@
+.stepsSection {
+  margin-top: 120px;
+
+  .steps {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+
+  .info {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 108px;
+
+      .head {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        h2 {
+          font-size: 36px;
+          font-weight: 700;
+          color: variables.$text-color-primary;
+        }
+
+        p {
+          font-size: 22px;
+          font-weight: 500;
+          color: variables.$text-color-primary;
+          max-width: 400px;
+        }
+      }
+    }
+  }
+}
+
+.button {
+  width: 260px;
+}

@@ -5,6 +5,7 @@ import IconText from "../IconText/IconText";
 import Button from "../ui/Buttons/Button/Button";
 import styles from "./TariffCard.module.scss";
 import DropdownSingle from "../ui/DropdownSingle/DropdownSingle";
+import InputCounter from "../ui/InputCounter/InputCounter";
 
 export interface ITariffCard {
   data: {
@@ -31,7 +32,7 @@ export default function TariffCard({ data }: ITariffCard) {
         <DropdownSingle label="Страна" />
         <div className={styles.mainWrapper}>
           <DropdownSingle label="Период" />
-          <DropdownSingle label="Количество" />
+          <InputCounter label="Количество" />
         </div>
         <DropdownSingle label="Скорость" />
       </div>

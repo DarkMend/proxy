@@ -12,6 +12,7 @@ export interface IScopeCard extends HTMLAttributes<HTMLDivElement> {
   ul?: string[];
   img?: ReactNode;
   column?: boolean;
+  theme?: "white";
 }
 
 export default function ScopeCard({
@@ -20,16 +21,23 @@ export default function ScopeCard({
   img,
   ul,
   column = false,
+  theme,
   className,
 }: IScopeCard) {
   return (
     <div
       className={cn(styles.card, className, {
         [styles.column]: column,
+        [styles.theme]: !!theme,
       })}
     >
       <div className={styles.wrapper}>
-        <IconText icon={iconText.icon} text={iconText.title} />
+        <IconText
+          icon={iconText.icon}
+          title={iconText.title}
+          colorText="black"
+          theme={theme}
+        />
         <p className={styles.text}>{text}</p>
         {ul && (
           <ul>

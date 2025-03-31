@@ -4,6 +4,12 @@
   align-items: center;
   gap: 16px;
 
+  &.theme {
+    .title {
+      color: white !important;
+    }
+  }
+
   .text {
     font-size: 20px;
     color: variables.$text-color-primary;

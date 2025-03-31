@@ -15,6 +15,7 @@ export default function ScopeSection() {
                 text={item.text}
                 iconText={item.icon}
                 key={item.icon.title}
+                theme={item.theme}
               />
             ))}
           </div>

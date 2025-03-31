@@ -6,6 +6,14 @@
   border-radius: 32px;
   background: variables.$background-color-secondary;
 
+  &.theme {
+    background: variables.$background-color-quaternary;
+
+    .text {
+      color: white;
+    }
+  }
+
   &.column {
     flex-direction: column;
   }

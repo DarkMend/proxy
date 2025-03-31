@@ -5,8 +5,10 @@ import cn from "classnames";
 
 export interface IIconText extends HTMLAttributes<HTMLDivElement> {
   icon: ReactNode;
-  text: string;
+  text?: string;
   title?: string;
+  colorText: string;
+  theme?: "white";
 }
 
 export default function IconText({
@@ -14,13 +16,22 @@ export default function IconText({
   text,
   title,
   className,
+  colorText,
+  theme,
   ...props
 }: IIconText) {
   return (
-    <div className={cn(styles.iconText, className)} {...props}>
-      <IconLayout icon={icon} />
+    <div
+      className={cn(styles.iconText, className, {
+        [styles.theme]: !!theme,
+      })}
+      {...props}
+    >
+      <IconLayout icon={icon} theme={theme} />
       <div className={styles.wrapper}>
-        <div className={styles.title}>{title}</div>
+        <div className={styles.title} style={{ color: colorText }}>
+          {title}
+        </div>
         <p
           className={cn(styles.text, {
             [styles.small]: !!title,

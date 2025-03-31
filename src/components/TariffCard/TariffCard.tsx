@@ -29,6 +29,11 @@ export default function TariffCard({ data }: ITariffCard) {
       </div>
       <div className={styles.main}>
         <DropdownSingle label="Страна" />
+        <div className={styles.mainWrapper}>
+          <DropdownSingle label="Период" />
+          <DropdownSingle label="Количество" />
+        </div>
+        <DropdownSingle label="Скорость" />
       </div>
       <div className={styles.action}>
         <div className={styles.price}>{data.price} ₽</div>

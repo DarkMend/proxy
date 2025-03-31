@@ -18,4 +18,17 @@
       font-weight: 700;
     }
   }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    &Wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
 }
